@@ -17,7 +17,7 @@ ActiveAdmin.register OrderDetail do
     end
     f.actions
   end
-  permit_params :order, :product, :product_price, :product_qty, :sales_tax, :total_cost
+  permit_params :order, :product, :product_price, :product_qty, :sales_tax, :total_cost, :order_id, :product_id
   #
   # or
   #

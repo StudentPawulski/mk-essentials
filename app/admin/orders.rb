@@ -12,11 +12,11 @@ ActiveAdmin.register Order do
       f.input :order_date
       f.input :ship_date
       f.input :member_id, as: :select, collection: Member.all
-      f.input :status
+      f.input :status_id, as: :select, collection: Status.all
     end
     f.actions
   end
-  permit_params :member, :address, :order_date, :ship_date
+  permit_params :member, :address, :order_date, :ship_date, :member_id, :status_id, :status
   #
   # or
   #
