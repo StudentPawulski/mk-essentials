@@ -1,0 +1,2 @@
+class MemberOrder < ApplicationRecord
+end
