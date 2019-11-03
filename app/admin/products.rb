@@ -6,12 +6,24 @@ ActiveAdmin.register Product do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  permit_params :name, :price, :desc, :category, :quantity, :discount, :available
+  form do |f|
+    f.inputs 'Details' do
+      f.input :name
+      f.input :category_id, as: :select, collection: Category.all
+      f.input :price
+      f.input :quantity
+      f.input :discount
+      f.input :available
+    end
+    f.actions
+  end
+  permit_params :name, :price, :desc, :quantity, :discount, :available, :category_id
+
   #
   # or
   #
   # permit_params do
-  #   permitted = [:name, :price, :desc, :category, :quantity, :discount, :available]
+  #   permitted = [:name, :price, :desc, :quantity, :discount, :available, :category_id]
   #   permitted << :other if params[:action] == 'create' && current_user.admin?
   #   permitted
   # end

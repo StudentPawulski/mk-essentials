@@ -6,6 +6,16 @@ ActiveAdmin.register Order do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
+  form do |f|
+    f.inputs 'Details' do
+      f.input :address
+      f.input :order_date
+      f.input :ship_date
+      f.input :member_id, as: :select, collection: Member.all
+      f.input :status
+    end
+    f.actions
+  end
   permit_params :member, :address, :order_date, :ship_date
   #
   # or
