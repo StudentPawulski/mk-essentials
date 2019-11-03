@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_03_182446) do
+ActiveRecord::Schema.define(version: 2019_11_03_182737) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -47,6 +47,8 @@ ActiveRecord::Schema.define(version: 2019_11_03_182446) do
   create_table "member_orders", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "order_id"
+    t.index ["order_id"], name: "index_member_orders_on_order_id"
   end
 
   create_table "members", force: :cascade do |t|
@@ -96,6 +98,7 @@ ActiveRecord::Schema.define(version: 2019_11_03_182446) do
     t.index ["category_id"], name: "index_products_on_category_id"
   end
 
+  add_foreign_key "member_orders", "orders"
   add_foreign_key "order_details", "orders"
   add_foreign_key "order_details", "products"
   add_foreign_key "orders", "members"
