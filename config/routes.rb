@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'order/index'
   get 'status/index'
   get 'category/index'
   get 'product/index'

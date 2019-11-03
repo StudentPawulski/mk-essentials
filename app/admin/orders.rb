@@ -4,6 +4,16 @@ ActiveAdmin.register Order do
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
+  show do
+    attributes_table do
+      row :member_id
+      row :address
+      row :order_date
+      row :ship_date
+      row :status_id
+    end
+    active_admin_comments
+  end
   # Uncomment all parameters which should be permitted for assignment
   #
   form do |f|
