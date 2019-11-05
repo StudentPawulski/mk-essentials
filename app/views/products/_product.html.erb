@@ -2,14 +2,14 @@
   <div class="horse card">
     <div class='card-content'>
       <h5 class='title'>
-        <%= product.name %>
+        <%= link_to product.name.humanize, product %>
       </h5>
-      <h3>
+      <h3>Category id:
         <%= product.category_id %>
       </h3>
       <ul>
-        <li><%= product.price %></li>
-        <li><%= product.desc %></li>
+        <li>Price: <%= number_to_currency(product.price) %></li>
+        <li>Description: <%= product.desc %></li>
       </ul>
     </div>
   </div>

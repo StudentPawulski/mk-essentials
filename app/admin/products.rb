@@ -8,12 +8,11 @@ ActiveAdmin.register Product do
   #
   form do |f|
     f.inputs 'Details' do
-      f.input :name
-      f.input :category_id, as: :select, collection: Category.all
-      f.input :price
-      f.input :quantity
-      f.input :discount
-      f.input :available
+      f.semantic_errors
+      f.inputs
+      # f.inputs do
+      #  f.input :image, as: :file
+      # end
     end
     f.actions
   end
