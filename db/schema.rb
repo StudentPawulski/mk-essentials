@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_05_183602) do
+ActiveRecord::Schema.define(version: 2019_11_05_184016) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -81,6 +81,7 @@ ActiveRecord::Schema.define(version: 2019_11_05_183602) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "member_id"
     t.integer "status_id"
+    t.string "province"
     t.index ["member_id"], name: "index_orders_on_member_id"
     t.index ["status_id"], name: "index_orders_on_status_id"
   end
