@@ -12,7 +12,7 @@ ActiveAdmin.register OrderDetail do
       f.input :product_id, as: :select, collection: Product.all
       f.input :product_price
       f.input :product_qty
-      f.input :sales_tax
+      # f.input :sales_tax
       f.input :total_cost
     end
     f.actions
