@@ -26,7 +26,7 @@ ActiveAdmin.register Order do
     end
     f.actions
   end
-  permit_params :member, :address, :order_date, :ship_date, :member_id, :status, :province_id
+  permit_params :member, :address, :order_date, :ship_date, :member_id, :status_id, :province_id
   #
   # or
   #
