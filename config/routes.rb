@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  get 'categories/index'
+  get 'categories/show'
   # devise_for :members
   get 'pages/index'
   get 'pages/show'
@@ -22,11 +24,11 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
 
   resources :products, only: %i[index show]
-  resources :page, only: %i[index show]
+  resources :categories, only: %i[index show]
   resources :pages, only: %i[index show]
 
   # get '/:page' => 'static#show'
 
-  root to: 'products#index'
+  root to: 'categories#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

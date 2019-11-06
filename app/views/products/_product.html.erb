@@ -1,4 +1,11 @@
 <div class='column is-one-third'>
+<% if product.image.present?%>
+   <div class="card-image">
+    <figure class="image is-4by3">
+    <%= image_tag url_for(product.image) %>
+    </figure>
+  </div>
+  <% end %>
   <div class="horse card">
     <div class='card-content'>
       <h5 class='title'>
