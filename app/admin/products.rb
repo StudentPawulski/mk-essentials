@@ -10,13 +10,13 @@ ActiveAdmin.register Product do
     f.inputs 'Details' do
       f.semantic_errors
       f.inputs
-      # f.inputs do
-      #  f.input :image, as: :file
-      # end
+      f.inputs do
+        f.input :image, as: :file
+      end
     end
     f.actions
   end
-  permit_params :name, :price, :desc, :quantity, :discount, :available, :category_id
+  permit_params :name, :price, :desc, :quantity, :discount, :available, :category_id, :image
 
   #
   # or
