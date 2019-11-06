@@ -2,6 +2,7 @@
 
 class ProductsController < ApplicationController
   def index
+    # before_action :authenticate_member!
     @products = Product.all
     # @categories = Product.category_id.all
   end
