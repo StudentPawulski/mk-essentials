@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  get 'province/index'
+  get 'province/show'
   get 'member/index'
   get 'member/show'
   get 'products/index'
