@@ -1,28 +1,14 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  get 'categories/index'
-  get 'categories/show'
-  get 'pages/index'
-  get 'pages/show'
-  get 'page/index'
-  get 'page/show'
-  get 'province/index'
-  get 'province/show'
-  get 'member/index'
-  get 'member/show'
-  get 'products/index'
-  get 'static/show'
-  get 'order/index'
-  get 'status/index'
-  get 'category/index'
-  get 'product/index'
-  get 'product/show'
-
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
-  resources :products, only: %i[index show]
+  resources :products, only: %i[index show] do
+    collection do
+      get 'search_results'
+    end
+  end
   resources :categories, only: %i[index show]
   resources :pages, only: %i[index show]
 

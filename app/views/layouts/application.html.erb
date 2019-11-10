@@ -21,6 +21,13 @@
     <h4 class='subtitle'>
       <%= link_to "Contact", '/pages/2' %>
     </h4>
+
+    <%= form_with(url: search_results_products_path, method: "get", local: true) do %>
+      <%= label_tag(:query, "Search for:") %>
+      <%= text_field_tag(:query) %>
+      <%= submit_tag("Search") %>
+    <% end %>
+
   </section>
   <section class='section'>
     <%= yield %>
