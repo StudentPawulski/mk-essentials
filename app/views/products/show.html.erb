@@ -1,4 +1,6 @@
-<h3 class='title is-4'>Product</h3>
+<h3 class='title is-4'>
+  <%= link_to @product.category, category %>
+</h3>
 
 <div class ="columns is-multiline">
   <%= render @product %>
