@@ -2,14 +2,14 @@
 
 class ProductsController < ApplicationController
   def index
-    @products = Product.all
+    @products = Product.all.page params[:page]
     # @categories = Product.category_id.all
   end
 
   # GET /products/search_results
   def search_results
     @query = params[:query]
-    @productsearch = Product.where(name: @query)
+    @productsearch = Product.where('name LIKE ?', "%#{@query}%").page params[:page]
   end
 
   def show

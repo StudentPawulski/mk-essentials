@@ -2,6 +2,7 @@
   Your search for '<%= @query %>' returned <%= pluralize(@productsearch.size, 'result')%>.
 </p>
 
+<%= paginate @productsearch %>
 <div class='columns is-multiline'>
   <%= render partial: 'product',
           collection: @productsearch,

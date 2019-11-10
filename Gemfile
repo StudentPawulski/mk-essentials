@@ -27,6 +27,7 @@ gem 'jbuilder', '~> 2.7'
 # Active Admin
 gem 'activeadmin'
 gem 'devise'
+gem 'kaminari'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
