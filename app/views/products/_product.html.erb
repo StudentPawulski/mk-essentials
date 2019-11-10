@@ -11,9 +11,7 @@
       <h5 class='title'>
         <%= link_to product.name, product %>
       </h5>
-      <h3>Category id:
-        <%= product.category_id %>
-      </h3>
+      <h3>Category: <%= product.category.name %></h3>
       <ul>
         <li>Price: <%= number_to_currency(product.price) %></li>
         <li>Description: <%= product.desc %></li>
