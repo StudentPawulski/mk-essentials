@@ -32,7 +32,7 @@ gem 'devise'
 gem 'image_processing', '~> 1.2'
 gem 'kaminari'
 
-gem 'passenger'
+# gem 'passenger'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
