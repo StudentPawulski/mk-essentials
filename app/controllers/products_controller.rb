@@ -9,7 +9,8 @@ class ProductsController < ApplicationController
   # GET /products/search_results
   def search_results
     @query = params[:query]
-    @productsearch = Product.where('name LIKE ?', "%#{@query}%").page params[:page]
+    # @categorysearch = Category.order(:name)
+    @productsearch = Product.where('name LIKE ?', "%#{@query}%").where('category_id = ?', params['categoryquery']['category']).page params[:page]
   end
 
   def show
