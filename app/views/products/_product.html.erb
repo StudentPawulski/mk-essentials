@@ -6,16 +6,22 @@
     </figure>
   </div>
   <% end %>
-  <div class="horse card">
+  <div class="product card">
     <div class='card-content'>
       <h5 class='title'>
         <%= link_to product.name, product %>
       </h5>
       <h3>Category: <%= product.category.name %></h3>
       <ul>
-        <li>Price: <%= number_to_currency(product.price) %></li>
+        <li>Price: <%= number_to_currency(product.price/100) %></li>
         <li>Description: <%= product.desc %></li>
       </ul>
+      <% if @cart.include?(product) %>
+        <p><%= button_to 'remove_from_cart', remove_from_cart_path(product), method: :delete, :class => "button is-outlined" %></p>
+        <p>Product is in your cart</p>
+      <% else %>
+        <p><%= link_to 'add to cart', add_to_cart_path(product.id), method: :post %></p>
+      <% end %>
     </div>
   </div>
 </div>

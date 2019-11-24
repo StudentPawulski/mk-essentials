@@ -22,15 +22,18 @@
       <%= link_to "Contact", '/pages/2' %>
     </h4>
 
-    <%= form_with(url: search_results_products_path, method: "get", local: true) do %>
+    <%= form_with(url: search_results_products_path, method: "get", local: true, :class => "dropdown is-primary") do %>
       <%= collection_select(:categoryquery, :category, Category.all, :id, :name)%>
       <%= label_tag(:query, "Search for:") %>
       <%= text_field_tag(:query) %>
-      <%= submit_tag("Search") %>
+      <%= submit_tag("Search", :class => "button is-primary") %>
     <% end %>
 
   </section>
-  <section class='section'>
-    <%= yield %>
-  </section>
+  <body>
+    <section class='section'>
+      <p>You have visted this site <%= pluralize @visit_count, 'time' %>.</p>
+      <%= yield %>
+    </section>
+  </body>
 </html>

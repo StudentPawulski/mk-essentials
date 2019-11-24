@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_13_141607) do
+ActiveRecord::Schema.define(version: 2019_11_24_162914) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -79,15 +79,21 @@ ActiveRecord::Schema.define(version: 2019_11_13_141607) do
     t.string "email"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.index ["email"], name: "index_members_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_members_on_reset_password_token", unique: true
   end
 
   create_table "order_details", force: :cascade do |t|
-    t.float "product_price"
     t.integer "product_qty"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "product_id"
     t.integer "order_id"
+    t.integer "product_price"
     t.index ["order_id"], name: "index_order_details_on_order_id"
     t.index ["product_id"], name: "index_order_details_on_product_id"
   end
@@ -118,7 +124,6 @@ ActiveRecord::Schema.define(version: 2019_11_13_141607) do
 
   create_table "products", force: :cascade do |t|
     t.string "name"
-    t.float "price"
     t.text "desc"
     t.integer "quantity"
     t.float "discount"
@@ -126,6 +131,7 @@ ActiveRecord::Schema.define(version: 2019_11_13_141607) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "category_id"
+    t.integer "price"
     t.index ["category_id"], name: "index_products_on_category_id"
   end
 
