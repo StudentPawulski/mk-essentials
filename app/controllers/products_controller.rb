@@ -2,7 +2,7 @@
 
 class ProductsController < ApplicationController
   before_action :initialize_session
-  before_action :increment_visit_count, only: %i[index cart]
+  # before_action :increment_visit_count, only: %i[index cart]
   before_action :load_cart
 
   def index
@@ -37,7 +37,7 @@ class ProductsController < ApplicationController
   private
 
   def initialize_session
-    session[:visit_count] ||= 0
+    # session[:visit_count] ||= 0
     session[:cart] ||= []
   end
 
@@ -45,8 +45,8 @@ class ProductsController < ApplicationController
     @cart = Product.find(session[:cart])
   end
 
-  def increment_visit_count
-    session[:visit_count] += 1
-    @visit_count = session[:visit_count]
-  end
+  # def increment_visit_count
+  #  session[:visit_count] += 1
+  #  @visit_count = session[:visit_count]
+  # end
 end

@@ -1,26 +1,10 @@
 <h3 class='title is-4'>All Products</h3>
-<div class='section'>
-  <details>
-    <summary>Shopping Cart</summary>
-    <% if @cart.empty? %>
-      <p>No Items in cart.</p>
-    <% else %>
-      <ul>
-        <% @cart.each do |product| %>
-          <li><%= product.name %><%= link_to 'remove_from_cart', remove_from_cart_path(product), method: :delete, :class => "button is-outlined" %></li>
-        <% end %>
-      </ul>
-    <% end %>
-  </details>
-</div>
 
   <div class='buttons'>
     <% @categories.each do |category| %>
       <%= link_to category.name, category, class: 'button is-link' %>
     <% end %>
   </div>
-
-
   <div class='columns'>
     <%= paginate @products %>
   </div>
@@ -29,3 +13,4 @@
               collection: @products,
               locals: { name_is_link: true } %>
   </div>
+
