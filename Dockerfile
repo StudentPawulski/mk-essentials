@@ -29,8 +29,8 @@ ENV SECRET_KEY_BASE='2502e3fba52ad66fcef930dcf59ad9210d3e1a1aceadd6077c7498d0551
 COPY Gemfile Gemfile
 COPY Gemfile.lock Gemfile.lock
 
-RUN bundle install --without development test
-#RUN bundle install --jobs 20 --retry 5 --without development test
+#RUN bundle install --without development test
+RUN bundle install --jobs 20 --retry 5 --without development test
 
 COPY package.json package.json
 COPY yarn.lock yarn.lock
