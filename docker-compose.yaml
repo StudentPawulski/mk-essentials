@@ -1,4 +1,4 @@
-version: "3"
+version: '3'
 volumes:
   postgres-data:
 services:
@@ -10,7 +10,7 @@ services:
       - "5432"
     volumes:
       - postgres-data:/var/lib/postgresql/data
-        #restart: always
+    # restart: always
   app:
     build:
       context: .
@@ -20,9 +20,9 @@ services:
       - DATABASE_URL=postgres://postgres:postgres@db:5432
       - RAILS_SERVE_STATIC_FILES=true
     # volumes:
-    #  - .:/project
+    #   - .:/project # Only mount this volume if running Rails in development mode.
     ports:
       - "3000:3000"
     depends_on:
       - db
-        #restart: always
+    # restart: always
