@@ -26,7 +26,7 @@ gem 'jbuilder', '~> 2.7'
 # Active Admin
 gem 'activeadmin'
 gem 'devise'
-
+gem 'faker'
 # My Gems
 gem 'image_processing', '~> 1.2'
 gem 'kaminari'

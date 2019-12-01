@@ -32,22 +32,24 @@
     <div>
       <details>
         <summary>Shopping Cart</summary>
-        <% if @cart.empty? %>
-          <p>No Items in cart.</p>
-        <% else %>
-          <ul>
-            <% @cart.each do |product| %>
-              <li><%= product.name %><%= link_to 'remove_from_cart', remove_from_cart_path(product), method: :delete, :class => "button is-outlined" %></li>
-            <% end %>
-          </ul>
+        <% if @cart %>
+          <% if @cart.empty? %>
+            <p>No Items in cart.</p>
+          <% else %>
+            <ul>
+              <% @cart.each do |product| %>
+                <li><%= product.name %><%= link_to 'remove_from_cart', remove_from_cart_path(product), method: :delete, :class => "button is-outlined" %></li>
+              <% end %>
+            </ul>
+          <% end %>
         <% end %>
       </details>
     </div>
 
   </section>
-  <body>
+
     <section class='section'>
       <%= yield %>
     </section>
-  </body>
+
 </html>
