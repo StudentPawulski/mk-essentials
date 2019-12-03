@@ -1,7 +1,19 @@
-<h3 class="title is-4"><%= @category.name %></h3>
+<h3 class='title is-4'>Categories of products</h3>
+<p>
+  <div class='buttons'>
+    <% @categories.each do |category| %>
+      <%= link_to category.name, category, class: 'button is-link' %>
+    <% end %>
+  </div>
+</p>
 
-<div class="columns is-multiline">
-  <%= render partial: 'products/product',
-            collection: @category.products,
-            locals: { name_is_link: true } %>
-</div>
+<p>
+<div class='columns'>
+  <%= paginate @products %>
+  </div>
+  <div class="columns is-multiline">
+    <%= render partial: '/products/product',
+              collection: @products,
+              locals: { name_is_link: true } %>
+  </div>
+</p>
